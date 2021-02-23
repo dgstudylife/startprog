@@ -3,25 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: donggele <donggele@student.42seoul.kr      +#+  +:+       +#+        */
+/*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/22 22:22:57 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/22 23:17:09 by donggele         ###   ########.fr       */
+/*   Created: 2021/02/23 19:44:39 by donggele          #+#    #+#             */
+/*   Updated: 2021/02/23 19:46:40 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-
-
 void	ft_putnbr(int nb);
 {
-	if (nb >= 0)
-	{
-		
-	}
-	else
-	{
-		
-	}
+	write(1, &nb, 4);
 }
