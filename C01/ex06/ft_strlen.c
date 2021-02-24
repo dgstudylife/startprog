@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/22 17:54:57 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/22 17:56:14 by donggele         ###   ########.fr       */
+/*   Created: 2021/02/24 11:51:27 by donggele          #+#    #+#             */
+/*   Updated: 2021/02/24 12:05:56 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_print_alphabet(void);
-
-int		main(void)
+int		ft_strlen(char *str)
 {
-	ft_print_alphabet();
-	return (0);
+	int		count;
+
+	count = 0;
+	while (*str++)
+	{
+		count++;
+	}
+	return (count);
 }
