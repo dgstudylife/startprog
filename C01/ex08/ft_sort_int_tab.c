@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 12:07:35 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/24 14:31:45 by donggele         ###   ########.fr       */
+/*   Created: 2021/02/24 14:32:27 by donggele          #+#    #+#             */
+/*   Updated: 2021/02/24 16:11:31 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int i;
+	int index;
 	int temp;
 
 	i = 0;
-	while (i < (size / 2))
+	index = 0;
+	while (i < (size - 1))
 	{
-		temp = tab[i];
-		tab[i] = tab[size - 1 - i];
-		tab[size - 1 - i] = temp;
+		while (index < (size - 1))
+		{
+			if (tab[index] > tab[index + 1])
+			{
+				temp = tab[index];
+				tab[index] = tab[index + 1];
+				tab[index + 1] = temp;
+			}
+			index++;
+		}
 		i++;
+		index = 0;
 	}
 }

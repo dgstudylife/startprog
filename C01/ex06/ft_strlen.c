@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:51:27 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/24 12:05:56 by donggele         ###   ########.fr       */
+/*   Updated: 2021/02/24 16:07:33 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@ int		ft_strlen(char *str)
 	int		count;
 
 	count = 0;
-	while (*str++)
+	while (*str)
 	{
 		count++;
+		str++;
 	}
 	return (count);
 }

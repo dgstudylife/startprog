@@ -6,14 +6,14 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 01:43:54 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/24 01:46:13 by donggele         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:32:59 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
 	int temp;
-	
+
 	temp = *a;
 	*a = *b;
 	*b = temp;

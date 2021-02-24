@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:41:02 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/24 11:47:43 by donggele         ###   ########.fr       */
+/*   Updated: 2021/02/24 16:00:13 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_putstr(char *str)
 {
-	while (*str++)
+	while (*str)
 	{
-		write(1, str - 1, 1);
+		write(1, str, 1);
+		str++;
 	}
 }
