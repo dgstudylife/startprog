@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:32:27 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/24 16:11:31 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/07 18:20:39 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	index = 0;
 	while (i < (size - 1))
 	{
-		while (index < (size - 1))
+		while (index < (size - 1 - i))
 		{
 			if (tab[index] > tab[index + 1])
 			{

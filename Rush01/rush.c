@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rush.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: soahn <soahn@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 14:22:04 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/07 17:31:36 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/06 22:33:26 by soahn             #+#    #+#             */
+/*   Updated: 2021/03/07 20:28:12 by soahn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+#include "rush.h"
 
 int	g_board[5][5];
 int	g_isused_row[5][5];
@@ -18,12 +20,6 @@ int	g_isused_col[5][5];
 int	*g_start[4];
 int	g_move_intvl[4][2];
 int	g_fail = 1;
-
-int		is_answer(void);
-
-int		fill(int row, int col);
-
-int 	fill_sub(int row, int col);
 
 void	print_board(void)
 {
@@ -39,34 +35,16 @@ void	print_board(void)
 		{
 			n = g_board[i][j] + '0';
 			write(1, &n, 1);
-			write(1, " ", 1);
+			if (j != 4)
+				write(1, " ", 1);
 		}
 		write(1, "\n", 1);
 	}
 }
 
-int		fill(int row, int col)
-{
-	if(row == 5)
-	{
-		if (is_answer())
-		{
-			print_board();
-			g_fail = 0;
-			return (1);
-		}
-		else
-			return (0);
-	}
-	else if (col ==5)
-		return (fill(row + 1, 1));
-	else
-		return (fill_sub(row, col));
-}
-
 int		fill_sub(int row, int col)
 {
-	int block;
+	int	block;
 
 	block = 0;
 	while (++block < 5)
@@ -84,18 +62,27 @@ int		fill_sub(int row, int col)
 	return (0);
 }
 
-void	init(int i, int j)
+int		fill(int row, int col)
 {
-	while (++i < 5)
+	if (row == 5)
 	{
-		j = 0;
-		while (++j < 5)
+		if (is_answer())
 		{
-			g_board[i][j] = 0;
-			g_isused_row[i][j] = 0;
-			g_isused_col[i][j] = 0;
+			print_board();
+			g_fail = 0;
+			return (1);
 		}
+		else
+			return (0);
 	}
+	else if (col == 5)
+		return (fill(row + 1, 1));
+	else
+		return (fill_sub(row, col));
+}
+
+void	init(void)
+{
 	g_start[0] = &g_board[1][1];
 	g_start[1] = &g_board[4][1];
 	g_start[2] = &g_board[1][1];
@@ -112,7 +99,7 @@ void	init(int i, int j)
 
 void	rush(void)
 {
-	init(0, 0);
+	init();
 	fill(1, 1);
 	if (g_fail)
 		write(1, "Error\n", 6);

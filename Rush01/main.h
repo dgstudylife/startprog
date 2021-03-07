@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soahn <soahn@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 09:50:43 by soahn             #+#    #+#             */
-/*   Updated: 2021/03/07 20:28:14 by soahn            ###   ########.fr       */
+/*   Created: 2021/03/07 20:21:39 by soahn             #+#    #+#             */
+/*   Updated: 2021/03/07 20:23:01 by soahn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef MAIN_H
+# define MAIN_H
 
-#include "main.h"
+extern int		make_condition(char *cond);
 
-int		main(int argc, char *argv[])
-{
-	if (argc != 2 || !make_condition(argv[1]))
-		write(1, "Error\n", 6);
-	else
-		rush();
-	return (0);
-}
+extern void		rush(void);
+
+#endif

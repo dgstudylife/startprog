@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:17:58 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/25 11:21:34 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/07 18:00:15 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int	main(void)
 {
 	int p = 0;
 	ft_ft(&p);
-	printf("%d ", p);
+	printf("%d", p);
 	return(0);
 }

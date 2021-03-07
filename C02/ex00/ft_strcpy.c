@@ -6,23 +6,22 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 13:33:52 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/26 00:39:34 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/07 18:59:54 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
-
-	i = 0;
-	while (src[i] != '\0')
+	while (*src)
 	{
-		dest[i] = src[i];
-		i++;
+		*dest = *src;
+		src++;
+		dest++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	*dest = '\0';
+
+
 }
 
 

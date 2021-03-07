@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   helper.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: soahn <soahn@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 13:58:30 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/07 17:42:34 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/06 09:53:06 by soahn             #+#    #+#             */
+/*   Updated: 2021/03/07 20:28:21 by soahn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		g_cond[16];
-extern int	*g_start[4];
-extern int	g_move_intvl[4][2];
+#include "helper.h"
+
+int			g_cond[16];
 
 int		check_line_right(int *ptr, int intvl, int cond)
 {
-	int highst;
-	int i;
+	int	highst;
+	int	i;
 	int	visible;
 
 	highst = 0;
@@ -60,17 +60,17 @@ int		is_answer(void)
 	return (1);
 }
 
-int	ft_isspace(char c)
+int		ft_isspace(char c)
 {
-	if(c == ' ')
+	if (c == 32)
 		return (1);
 	return (0);
 }
 
 int		make_condition(char *cond)
 {
-	int	cnt;
-	int	i;
+	int		cnt;
+	int		i;
 
 	i = 0;
 	cnt = 0;
