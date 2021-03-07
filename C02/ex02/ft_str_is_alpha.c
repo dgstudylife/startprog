@@ -6,15 +6,15 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 03:44:32 by donggele          #+#    #+#             */
-/*   Updated: 2021/02/26 10:33:32 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:43:39 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	checkanother(char *str)
+int	isalphabet(char *str)
 {
-	if (*str > 'a' && *str < 'z' || *st)
+	if (*str >= 'a' && *str <= 'z')
 		return (1);
-	else if (*str > 'A' && *str < 'Z')
+	else if (*str >= 'A' && *str <= 'Z')
 		return (1);
 	else
 		return (0);
@@ -25,10 +25,11 @@ int	ft_str_is_alpha(char *str)
 	int i;
 
 	i = 0;
-	while(str[i] != '\0')
+	while (*str)
 	{
-		if (checkanother(str + i))
-
-		i++;
+		if (!isalphabet(str))
+			return (0);
+		str++;
 	}
+	return (1);
 }

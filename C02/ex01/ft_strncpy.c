@@ -6,24 +6,26 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 00:58:44 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/07 18:41:15 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:27:12 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i; //갯수 이므로 양수여야함
+	char *tmp = dest;
 
-	i = 0;
-	while (src[i] && i < n)
-	{	
-		dest[i] = src[i];
-		i++;
-	}
-	while (index < n)
+	while (n && *src)
 	{
-		dest[i] = '\0';
-		i++;
+		if (*src)
+		{
+			*dest++ = *src++;
+			n--;
+		}
 	}
-	return (dest);
+	if (n)
+	{
+		while (--n)
+			*dest++ = '\0';
+	}
+	return (tmp);
 }
