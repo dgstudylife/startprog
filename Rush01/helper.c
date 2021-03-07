@@ -6,11 +6,11 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 13:58:30 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/07 17:30:02 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/07 17:42:34 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			g_cond[16];
+int		g_cond[16];
 extern int	*g_start[4];
 extern int	g_move_intvl[4][2];
 
@@ -67,7 +67,7 @@ int	ft_isspace(char c)
 	return (0);
 }
 
-int		make_conditon(char *cond)
+int		make_condition(char *cond)
 {
 	int	cnt;
 	int	i;
