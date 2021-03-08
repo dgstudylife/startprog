@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 23:45:50 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/07 23:53:32 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/08 12:50:37 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ int	isnum(char *str)
 
 int	ft_str_is_numeric(char *str)
 {
-	int i;
-
-	i = 0;
 	while (*str)
 	{
 		if (!isnum(str))

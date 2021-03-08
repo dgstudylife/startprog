@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 00:58:44 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 21:54:07 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/08 18:18:19 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/08 18:29:19 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include <stdio.h>
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+
+int	main(void)
 {
-	char *tmp;
-	
-	tmp = dest;
-	while (n && *src)
-	{
-		if (*src)
-		{
-			*tmp++ = *src++;
-			n--;
-		}
-	}
-	if (n)
-	{
-		while (--n)
-			*tmp++ = '\0';
-	}
-	return (dest);
+	unsigned int size;
+
+	char dest[6] = "123456";
+	size = 8;
+	char src[12] = "Hello World!";
+	ft_strlcpy(dest, src, size);
+	printf("%s", dest);
+	return (0);
 }

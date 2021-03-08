@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 23:57:29 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 00:06:16 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/08 12:50:21 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ int	islowercase(char *str)
 
 int	ft_str_is_lowercase(char *str)
 {
-	int i;
-
-	i = 0;
 	while (*str)
 	{
 		if (!islowercase(str))

@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 00:20:15 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 00:22:07 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/08 12:45:07 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	main(void)
 	char *print2;
 	char *tmp;
 
-	areyoulower = " !\"123dklsjfdieklnvij";
-	areuLower = "HelloWorld";
+	print1 = " !()&*:123dklsj ~_'fdieklnvij";
+	print2 = "\t\n";
 	tmp = "\0";
-	a = ft_str_is_lowercase(areyoulower);
-	b = ft_str_is_lowercase(areuLower);
-	temp = ft_str_is_lowercase(tmp);
+	a = ft_str_is_printable(print1);
+	b = ft_str_is_printable(print2);
+	temp = ft_str_is_printable(tmp);
 	printf("a = %d, b = %d, temp = %d", a, b, temp);
 	return (0);
 }

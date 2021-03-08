@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 00:07:27 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 00:08:34 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/08 12:50:07 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ int	isuppercase(char *str)
 
 int	ft_str_is_uppercase(char *str)
 {
-	int i;
-
-	i = 0;
 	while (*str)
 	{
 		if (!isuppercase(str))

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 00:58:44 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 21:54:07 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/08 16:55:42 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/08 17:43:08 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include <stdio.h>
+
+
+
+char	*ft_strcapitalize(char *str);
+
+int		main(void)
 {
-	char *tmp;
-	
-	tmp = dest;
-	while (n && *src)
-	{
-		if (*src)
-		{
-			*tmp++ = *src++;
-			n--;
-		}
-	}
-	if (n)
-	{
-		while (--n)
-			*tmp++ = '\0';
-	}
-	return (dest);
+	char print[100] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	ft_strcapitalize(print);
+	printf("%s", print);
+	return (0);
 }

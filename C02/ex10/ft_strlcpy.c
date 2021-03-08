@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 00:58:44 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 21:54:07 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/08 17:57:59 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/08 18:17:32 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	char *tmp;
-	
-	tmp = dest;
-	while (n && *src)
+	unsigned int	cnt;
+	unsigned int	i;
+
+	cnt = 0;
+	i = 0;
+	if (dest == 0 || src == 0)
+		return (0);
+	while (src[cnt] != 0)
+		cnt++;
+	if (size != 0)
 	{
-		if (*src)
+		while (src[i] != 0 && i < size - 1)
 		{
-			*tmp++ = *src++;
-			n--;
+			dest[i] = src[i];
+			i++;
 		}
+		dest[i] = 0;
 	}
-	if (n)
-	{
-		while (--n)
-			*tmp++ = '\0';
-	}
-	return (dest);
+	return (cnt);
 }

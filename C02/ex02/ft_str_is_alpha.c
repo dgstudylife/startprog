@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 03:44:32 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/07 23:43:39 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/08 12:50:53 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ int	isalphabet(char *str)
 
 int	ft_str_is_alpha(char *str)
 {
-	int i;
-
-	i = 0;
 	while (*str)
 	{
 		if (!isalphabet(str))

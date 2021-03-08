@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 00:58:44 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 21:54:07 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/08 20:35:51 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/08 20:43:36 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include <unistd.h>
+
+void	ft_putstr_non_printable(char *str);
+
+int	main(void)
 {
-	char *tmp;
-	
-	tmp = dest;
-	while (n && *src)
-	{
-		if (*src)
-		{
-			*tmp++ = *src++;
-			n--;
-		}
-	}
-	if (n)
-	{
-		while (--n)
-			*tmp++ = '\0';
-	}
-	return (dest);
+	char a;
+	char src[100] = "Coucou\ntu vas bien ? \t";
+	a = 127;
+
+	ft_putstr_non_printable(src);
+	write(1, "\n", 1);
+	ft_putstr_non_printable(&a);
+	return (0);
 }

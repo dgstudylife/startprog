@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 13:33:52 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/07 21:47:40 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/08 21:51:39 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -18,10 +18,10 @@ char	*ft_strcpy(char *dest, char *src)
 	tmp = dest;
 	while (*src)
 	{
-		*dest = *src;
+		*tmp = *src;
 		src++;
-		dest++;
+		tmp++;
 	}
-	*dest = '\0';
-	return (tmp);
+	*tmp = '\0';
+	return (dest);
 }

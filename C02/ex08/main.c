@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 00:58:44 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 21:54:07 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/08 13:52:11 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/08 13:53:25 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include <stdio.h>
+
+char	*ft_strlowcase(char *str);
+
+int		main(void)
 {
-	char *tmp;
-	
-	tmp = dest;
-	while (n && *src)
-	{
-		if (*src)
-		{
-			*tmp++ = *src++;
-			n--;
-		}
-	}
-	if (n)
-	{
-		while (--n)
-			*tmp++ = '\0';
-	}
-	return (dest);
+	char print[13] = "AbCdEfGh IjK!";
+	ft_strlowcase(print);
+	printf("%s", print);
+	return (0);
 }
