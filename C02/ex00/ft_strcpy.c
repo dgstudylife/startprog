@@ -6,9 +6,10 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 13:33:52 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 21:51:39 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/08 22:23:20 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
 char	*ft_strcpy(char *dest, char *src)
