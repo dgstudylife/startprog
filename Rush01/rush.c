@@ -6,7 +6,7 @@
 /*   By: soahn <soahn@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 22:33:26 by soahn             #+#    #+#             */
-/*   Updated: 2021/03/07 20:28:12 by soahn            ###   ########.fr       */
+/*   Updated: 2021/03/10 04:43:27 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,93 +14,96 @@
 
 #include "rush.h"
 
-int	g_board[5][5];
-int	g_isused_row[5][5];
-int	g_isused_col[5][5];
-int	*g_start[4];
-int	g_move_intvl[4][2];
-int	g_fail = 1;
+int	g_board[5][5];   // 메인 4x4 보드판 생성 [0][]  [][0]  행열은 쓰지 않는다. [1][1] ~ [4][4] 로 쓰려고 헷갈리지 않기 위해 이렇게 만들엇다.
+int	g_isused_row[5][5]; // 마찬가지이유이고 이것은 행의 숫자중복을 피하기 위한 판별 배열
+int	g_isused_col[5][5]; // 마찬가지 이유이고 이것은 열의 숫자중복을 피하기 위한 판별 배열
+int	*g_start[4]; // 보드판에 숫자 배치가 완성이 되고 16개 주어진 배열과 비교를 해야 될텐데  주소를 이동하며 비교하기 위해 특정  4개의 주소를 줌
+int	g_move_intvl[4][2]; // [i][0] 에는 각 위 포인터 4개에 대한 그 해당줄 비교를 위한 포인터 주소 이동값, [i][1]에는 그방향대로 4번을 옆으로 이동 혹은
+int	g_fail = 1;         // 아래로 이동하면서 비교를 해야되기 때문에 그 비교를 위한 포인터주소 이동값
+				// 보드판이 완성되고 정답체크까지 끝난뒤에 성공할때까지는 실패로 둔다.
 
 void	print_board(void)
 {
-	int		i;
-	int		j;
-	char	n;
+	int		i; //자 넌 행 숫자
+	int		j; // 넌 열 숫자
+	char	n; // int를 char형으로 바꾸기 위한 변수
 
 	i = 0;
-	while (++i < 5)
+	while (++i < 5) // 응 행 4번 할거니까
 	{
-		j = 0;
-		while (++j < 5)
+		j = 0; // 열 4개까지 출력후에 다시 0으로 초기화해줘야 다시 4개 출력할 수 있겠지
+		while (++j < 5) // 응 열 4번출력
 		{
-			n = g_board[i][j] + '0';
-			write(1, &n, 1);
+			n = g_board[i][j] + '0'; // 우선 int를 char로 바꾸고
+			write(1, &n, 1); // 문자 출력!
 			if (j != 4)
-				write(1, " ", 1);
+				write(1, " ", 1); // 4번째가 아니면 숫자 사이사이 스페이스 하나씩 넣어줄거야
 		}
-		write(1, "\n", 1);
+		write(1, "\n", 1); // 한행이 끝났으니 개행
 	}
 }
 
-int		fill_sub(int row, int col)
+int		fill_sub(int row, int col) // 자 여기는 row col에 따라 fill 함수에서 분류된 애들이 실질적으로 여기서 보드판에 해당행열에 배치시켜주는 곳이야
 {
-	int	block;
+	int	block;  //이건 이제 1~4에 값을 가지게 될거야 즉 숫자
 
 	block = 0;
-	while (++block < 5)
+	while (++block < 5)  //실질적으로 1부터 4까지 다 쓰게 될거야! block은 
 	{
-		if (g_isused_row[row][block] || g_isused_col[col][block])
-			continue;
-		g_isused_row[row][block] = 1;
-		g_isused_col[col][block] = 1;
-		g_board[row][col] = block;
-		if (fill(row, col + 1))
-			return (1);
-		g_isused_row[row][block] = 0;
-		g_isused_col[col][block] = 0;
+		if (g_isused_row[row][block] || g_isused_col[col][block])  // 얘네는 각각 5x5배열이지만 우리는 4x4 즉 16칸만 사용할거야
+			continue; // 그 행에 block, 즉 1~4중 하나를 한 열에  썼다면  그행에 다른 열은 이 쓴 block을 못쓰겟지 즉 다른 숫자를 써야할거야
+				// 그러므로 밑에는 실행안시키고 block을 1증가시켜서 다시 비교
+		g_isused_row[row][block] = 1; // 만일 행과 열 둘다 해당 block숫자를 안썻다? 
+		g_isused_col[col][block] = 1; // 그러면 이 block(숫자)는 내가 쓴거라고 표시해주는거야
+		g_board[row][col] = block;  // 그리고 보드판에 그 해당 행열에 숫자 넣어주기
+		if (fill(row, col + 1)) // 자 1,1 넣었으니까 다음 1,2를 넣어볼까? 일단 분류해야 겟지 fill에 넣자구나 
+									// 여기서 정답이 아니여서 0을 반환해 돌아 왔다면 요 밑에 0으로 다시 초기화가 돌아가겟지
+			return (1); // 정답찾아서 리턴1로 재귀함수  계속 나가것지 즉 탈출!
+		g_isused_row[row][block] = 0;  // 해당 블락 넣어봣는데 정답아니니까 이 블락은 이자리가 아니였네 다시 0으로 초기화 하고 
+		g_isused_col[col][block] = 0; // block 1증가 시켜서 다시 넣어봐야겟다 오 .... 여기가 그러면 백트래킹 지점인 거구나!
 	}
-	return (0);
+	return (0); // 성과가 없구만 찾질 못햇어 ... 리턴 0해야겟다 ㅜㅜ
 }
 
-int		fill(int row, int col)
+int		fill(int row, int col)  // 자 1,1 드간다...(fill함수 쭉 설명보고...)     결국엔 row col 이 어떤건지 판단해서 그에 맞게 분배해주는 역할이네?
 {
-	if (row == 5)
+	if (row == 5)     // 증가해서 row가 5까지 온거면 이거는4,4까지 다 채우고  5,1까지 온거... 여기에 해당하면 이거 드가
 	{
-		if (is_answer())
+		if (is_answer())  //정답이니?
 		{
-			print_board();
-			g_fail = 0;
-			return (1);
+			print_board();   // 오 그럼 이제 프린트해
+			g_fail = 0;     // 성공햇으니 실패도 0으로 바꾸고
+			return (1);    // 리턴도 1로 보내 그러면 여태 중첩으로 실행됏던 fill fill_sub... 1로 반환되면서 종료될거야 row col 숫자확인배열 0초기화x
 		}
 		else
-			return (0);
+			return (0);   // 헐 정답아니엿구나 그러면 0반환하겟군 얘가 실행된 곳은 fill_sub 이니 거길 봐야겟군
 	}
-	else if (col == 5)
-		return (fill(row + 1, 1));
-	else
-		return (fill_sub(row, col));
+	else if (col == 5)     // 1,5   2,5   3,5    4,5   에 해당하면 여기 드가 
+		return (fill(row + 1, 1));  //1,5 -> 2,1  // 2,5 -> 3,1 ......4,5  -> 5,1
+	else      // 1,1부터 특별한거 없으면 여기 들가야 겟지?
+		return (fill_sub(row, col));   //fill_sub에 넣어라
 }
 
 void	init(void)
 {
-	g_start[0] = &g_board[1][1];
-	g_start[1] = &g_board[4][1];
-	g_start[2] = &g_board[1][1];
-	g_start[3] = &g_board[1][4];
-	g_move_intvl[0][0] = 5;
-	g_move_intvl[0][1] = 1;
-	g_move_intvl[1][0] = -5;
-	g_move_intvl[1][1] = 1;
-	g_move_intvl[2][0] = 1;
-	g_move_intvl[2][1] = 5;
-	g_move_intvl[3][0] = -1;
-	g_move_intvl[3][1] = 5;
+	g_start[0] = &g_board[1][1]; //해당 위치 주소 저장 , 얘는 위에서 아래로 조사하겟지
+	g_start[1] = &g_board[4][1]; // 얘는 아래에서 위로 조사하겠지
+	g_start[2] = &g_board[1][1]; // 왼쪽에서 오른쪽으로 
+	g_start[3] = &g_board[1][4];// 오른쪽에서 왼쪽으로 
+	g_move_intvl[0][0] = 5; // 포인터 0번 조사하기 위한 포인터주소변동값
+	g_move_intvl[0][1] = 1; // 0번 한열만 조사할건 아니잖아? 반복으로 그 다음열 그다음열 해서 4번 해줘야지
+	g_move_intvl[1][0] = -5; // 포인터 1번 조사위한 포인터 주소변동값
+	g_move_intvl[1][1] = 1; // 1번 너도 마찬가지 4번해줘야지
+	g_move_intvl[2][0] = 1; // 포인터 2번 조사위한 포주변값
+	g_move_intvl[2][1] = 5; // 2번 너는 행에서 다음행으로 가야 되니 5겟지
+	g_move_intvl[3][0] = -1;// 포인터 3번 조포
+	g_move_intvl[3][1] = 5; // 3번도 4번 반복
 }
 
 void	rush(void)
 {
-	init();
-	fill(1, 1);
+	init();   // 전역변수는 0으로 모두 초기화 되있고 나머지 필요한 것들을 초기화 시켜준다
+	fill(1, 1); // 1,1 부터 채우기 드가자~
 	if (g_fail)
 		write(1, "Error\n", 6);
 }

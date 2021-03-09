@@ -6,7 +6,7 @@
 /*   By: soahn <soahn@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 09:50:43 by soahn             #+#    #+#             */
-/*   Updated: 2021/03/07 20:28:14 by soahn            ###   ########.fr       */
+/*   Updated: 2021/03/10 03:40:40 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int		main(int argc, char *argv[])
 {
-	if (argc != 2 || !make_condition(argv[1]))
-		write(1, "Error\n", 6);
-	else
-		rush();
+	if (argc != 2 || !make_condition(argv[1])) //인자가 문자열 하나만 받아온게 아니거나 16개를 가진 배열이 정상적으로 안만들어 졌다면
+		write(1, "Error\n", 6);  // 에러 출력해
+	else    // 인자를 문자열 제대로 받았고4321로 구성된 원소 16개  배열도 정상적으로 만들어 졌다면
+		rush();  //메인 러쉬함수로 드가자~
 	return (0);
 }
