@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:09:25 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/09 20:40:01 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/09 21:52:27 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putnbr(int nb)
 {
-	int	div;
-	int	rest;
+	int		div;
+	int		rest;
 	char	c;
 
 	if (nb == -2147483648)
