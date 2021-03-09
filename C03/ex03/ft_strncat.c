@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 23:08:18 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/09 13:48:51 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/09 14:12:03 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/09 16:48:56 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int i;
+	char	*tmp;
 
-	i = 0;
-	while (i < n - 1)
+	tmp = dest;
+	while(*tmp)
+		tmp++;
+	while(nb-- > 0 && *src)
 	{
-		if (*s1 != *s2)
-			break;
-		else if (*s1 == 0 || *s2 == 0)
-			break;
-		s1++;
-		s2++;
-		i++;
+		*tmp++ = *src++;
 	}
-	if ( n == 0)
-		return (0);
-	return ((int)(*s1 - *s2));
+	*tmp = '\0';
+	return (dest);
 }
-	

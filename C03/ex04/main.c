@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 23:08:18 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/09 13:48:51 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/09 15:20:44 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/09 15:24:58 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	int i;
+#include <stdio.h>
 
-	i = 0;
-	while (i < n - 1)
-	{
-		if (*s1 != *s2)
-			break;
-		else if (*s1 == 0 || *s2 == 0)
-			break;
-		s1++;
-		s2++;
-		i++;
-	}
-	if ( n == 0)
-		return (0);
-	return ((int)(*s1 - *s2));
+char	*ft_strstr(char *str, char *to_find);
+
+int	main(void)
+{
+	char a[13] = "aababcabcdccc";
+	char b[4] = "abcd";
+	char *temp;
+
+	temp = ft_strstr(a, b);
+	printf("%s", temp);
+	return (0);
 }
-	

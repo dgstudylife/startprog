@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 23:08:18 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/09 13:48:51 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/09 14:25:19 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/09 15:19:22 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int i;
+	char *p_str;
+	char *p_to_find;
 
-	i = 0;
-	while (i < n - 1)
+	if (*to_find == 0)
+		return (str);
+	while (*str != 0)
 	{
-		if (*s1 != *s2)
-			break;
-		else if (*s1 == 0 || *s2 == 0)
-			break;
-		s1++;
-		s2++;
-		i++;
+		if (*str == *to_find)
+		{
+			p_str = str + 1;
+			p_to_find = to_find + 1;
+			while (*p_to_find && *p_str && *p_str == *p_to_find)
+			{
+				p_str++;
+				p_to_find++;
+			}
+			if (*p_to_find == 0)
+				return (str);
+			else if (*p_str == 0)
+				break ;
+		}
+		str++;
 	}
-	if ( n == 0)
-		return (0);
-	return ((int)(*s1 - *s2));
+	return (0);
 }
-	
