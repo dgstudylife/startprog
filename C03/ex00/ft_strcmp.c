@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 22:41:39 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/08 23:02:18 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/09 17:51:49 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strcmp(char *s1, char *s2)
 		if (c1 != c2)
 			return ((int)(c1 - c2));
 		if (!c1)
-			break;
+			break ;
 	}
 	return (0);
 }
