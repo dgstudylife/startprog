@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 22:06:26 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/10 16:31:19 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/10 16:26:22 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/10 16:32:29 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
-{
-	int num;
-	int fn;
-	int count;
+#include <stdio.h>
 
-	fn = 0;
-	num = 0;
-	count = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	while (*str == '+' || *str == '-')
-	{
-		if (*str++ == '-')
-			count++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		fn *= 10;
-		num = *str - '0';
-		fn = fn + num;
-		str++;
-	}
-	if (count % 2 == 1)
-		return (-fn);
-	else
-		return (fn);
+int	ft_atoi(char *str);
+
+int	main(void)
+{
+	char *str;
+
+	str = "  ---+--+1234ab567";
+	printf("%d", ft_atoi(str));
+	return (0);
 }
