@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:33:15 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/11 02:49:27 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/11 05:22:14 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	ft_strlen(char *str)
 	{
 		if (*str == '+' || *str == '-')
 			return (0);
-		
-
 		count++;
 	}
 	if (count == 1)
@@ -39,7 +37,7 @@ int	ft_strlen(char *str)
 
 int	ft_check_base(char *base)
 {
-
+	return(0);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
@@ -47,4 +45,4 @@ void	ft_putnbr_base(int nbr, char *base)
 	int base_len;
 
 	base_len = ft_strlen(base);
-}:
+}
