@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 11:44:47 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/09 13:53:14 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/10 21:32:39 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int	main(void)
 
 	int result = strncmp(a, b, 4);
 	int result1 = ft_strncmp(a, b, 4);
-	printf("%d \n%d", result, result1);
+	printf("%d", result);
+	printf("\n");
+	printf("%d", result1);
+	printf("\n");
 	return (0);
 }

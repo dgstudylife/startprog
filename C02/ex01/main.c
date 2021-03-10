@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 22:53:02 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/10 15:06:41 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:41:08 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 	char dest[15];
 
 	src = "Hello World!";
-	ft_strncpy(dest, src, 15);
+	ft_strncpy(dest, src, 30);
 
 	printf("%s", dest);
 	return (0);
