@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 00:16:39 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/12 01:17:05 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/12 03:11:34 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 	int n;
 
 	n = argc - 1;
-	while(n)
+	while (n)
 	{
 		arr_print(argv[n]);
 		write(1, "\n", 1);

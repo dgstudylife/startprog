@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 01:18:25 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/12 02:57:32 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/12 03:11:02 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	arr_sort_ascii(char *arr[], int size)
 		}
 		if (!swapped)
 			break ;
-	}	
+	}
 }
 
 int	main(int argc, char *argv[])
@@ -68,10 +68,9 @@ int	main(int argc, char *argv[])
 		arr_sort_ascii(argv, argc - 1);
 	index = 1;
 	while (index < argc)
-	{	
+	{
 		arr_print(argv[index++]);
 		write(1, "\n", 1);
 	}
-
 	return (0);
 }
