@@ -6,28 +6,20 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 02:11:48 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/13 04:01:15 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/13 17:53:11 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_iterative_power(int nb, int power)
 {
-	int result;
+	int ret;
 
-	if (nb == 0 && power == 0)
-		return (1);
-	else if (power < 0 || nb <= 0)
+	if (power < 0)
 		return (0);
-	else if (power == 0)
+	if (power == 0)
 		return (1);
-	else
-	{
-		result = nb;
-		while (power - 1)
-		{
-			result *= nb;
-			power--;
-		}
-	}
-	return (result);
+	ret = nb;
+	while (--power)
+		ret *= nb;
+	return (ret);
 }

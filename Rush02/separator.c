@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   separator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 20:04:45 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/09 20:05:59 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/13 10:01:00 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/13 10:01:08 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_putstr(char *str);
-
-int	main(void)
+#include "rush02.h"
+char	*create_number(int j)
 {
-	char *dest;
+	char	*str;
+	int		i;
 
-	dest = "Hello 42Seoul!";
-	ft_putstr(dest);
-	return (0);
+	i = 1;
+	str = (char *)malloc((j - 1) * 3 + 2);
+	str[0] = '1';
+	while (i < (j - 1) * 3 + 1)
+	{
+		str[i] = '0';
+		i++;
+	}
+	str[i] = 0;
+	return (str);
+}
+
+void	print_separator(int j)
+{
+	if (j > 1)
+		putstr(ft_parse_dict(create_number(j)));
 }

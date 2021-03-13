@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 01:18:25 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/12 03:11:02 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/13 12:28:02 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	arr_swap(char *arr1[], char *arr2[])
 	*arr2 = temp;
 }
 
-int	arr_strcmp(char *arr1, char *arr2)
+int		arr_strcmp(char *arr1, char *arr2)
 {
 	while (*arr1 != '\0' && (*arr1 == *arr2))
 	{
@@ -60,7 +60,7 @@ void	arr_sort_ascii(char *arr[], int size)
 	}
 }
 
-int	main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	int index;
 
