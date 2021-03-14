@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/13 21:29:43 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/14 16:49:28 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/14 18:30:32 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/14 19:50:40 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		*ft_range(int min, int max)
+int	ft_strlen(char *str)
 {
-	int range;
-	int *buffer;
-	int index;
+	int length;
 
-	if (min >= max)
-		return (0);
-	range = max - min;
-	buffer = (int *)malloc((sizeof(int) * range));
-	if (buffer == NULL)
-		return (0);
-	else
-	{
-		index = 0;
-		while (index < range)
-		{
-			buffer[index] = min + index;
-			index++;
-		}
-	}
-	return (buffer);
+	length = 0;
+	while (str[length])
+		length++;
+	return (length);
+}
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	
+
 }
