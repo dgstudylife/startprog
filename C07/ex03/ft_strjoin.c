@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 18:30:32 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/15 04:34:19 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/15 04:36:24 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char		*ft_strjoin(int size, char **strs, char *sep)
 	char		*array;
 	char		*temp;
 	long long	strs_len;
-	int		index;
+	int			index;
 
 	if (!size)
 	{
