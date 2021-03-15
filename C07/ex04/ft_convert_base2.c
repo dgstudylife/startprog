@@ -6,31 +6,55 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:56:12 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/15 15:39:33 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/16 03:35:09 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	ft_strlen(char *src)
+{
+	int len;
+
+	len = 0;
+	while (src[len])
+		len++;
+	return (len);
+}
 
 int	ft_is_whitespace(char c)
 {
 	if ((c >= 9 && c <= 13) || c == ' ')
 		return (1);
+	return (0);
 }
 
-int	is_valid(char *base, int *len)
+int	is_base_valid(char *str)
 {
-	int		chk[256];
+	char	*temp;
 	int		i;
-	char	c;
+	int		j;
 
-	i = 0;
-	while (i < 256)
-		chk[i++] = 0;
-	*len = 0;
-	while (base[*len])
+	temp = str;
+	if (str == 0 || ft_strlen(str) <= 1)
+		return (0);
+	while (*temp)
 	{
-		c = base[*len];
-		if (chk[(int)c]
-
+		if (is_whitespace(*temp) || *temp == '+' || *temp == '-')
+			return (0);
+		temp++;
 	}
+	i = 0;
+	while (i < temp - str)
+	{
+		j = i + 1;
+		while (j < temp - str)
+			if (str[i] == str[j++])
+				return (0);
+		i++;
+	}
+	return (1);
+}
 
+int	compute_number_length()
+{
+	
 }
