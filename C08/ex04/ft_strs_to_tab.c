@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 02:14:15 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/15 03:16:06 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/15 15:05:18 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char				*ft_strdup(char *src)
 	char	*dest;
 
 	index = 0;
-	if (!(dest = (char *)malloc(ft_strlen(src) * sizeof(char))))
+	if (!(dest = (char *)malloc(ft_strlen(src) * sizeof(char) + 1)))
 		return (0);
 	while (src[index])
 	{
@@ -55,6 +55,6 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		array[index].copy = ft_strdup(av[index]);
 		index++;
 	}
-	array[index] = (t_stock_str){0, 0, 0};
+	array[index].str = 0;
 	return (array);
 }

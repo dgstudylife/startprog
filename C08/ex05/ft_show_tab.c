@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 02:58:52 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/15 03:19:40 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/15 15:06:58 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,25 @@
 
 void	ft_putstr(char *str)
 {
-	while (*str)
+	int i;
+
+	i = 0;
+	while (str[i])
 	{
-		write(1, str, 1);
-		str++;
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 
-void	ft_putnbr(int number)
+void	ft_putnbr(int size)
 {
-	if (number > 9)
-		ft_putnbr(number / 10);
-	write(1, &"0123456789"[number % 10], 1);
+	char c;
+
+	if (size == 0)
+		return ;
+	c = (size % 10) + '0';
+	ft_putnbr(size / 10);
+	write(1, &c, 1);
 }
 
 void	ft_sow_tab(struct s_stock_str *par)
@@ -38,7 +45,10 @@ void	ft_sow_tab(struct s_stock_str *par)
 	{
 		ft_putstr(par[index].str);
 		write(1, "\n", 1);
-		ft_putnbr(par[index].size);
+		if (par[index].size)
+			ft_putnbr(par[index].size);
+		else
+			write(1, "0", 1);
 		write(1, "\n", 1);
 		ft_putstr(par[index].copy);
 		write(1, "\n", 1);
