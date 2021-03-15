@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:33:15 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/15 17:13:54 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/15 17:47:06 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		is_base_valid(char *str)
 		return (0);
 	while (*temp)
 	{
-		if ((*temp >= 9 && *temp <= 13) || *temp == ' ' 
+		if ((*temp >= 9 && *temp <= 13) || *temp == ' '
 				|| *temp == '+' || *temp == '-')
 			return (0);
 		temp++;
@@ -75,6 +75,6 @@ void	ft_putnbr_base(int nbr, char *base)
 
 	if (!is_base_valid(base))
 		return ;
-	form = ft_strlen (base);
+	form = ft_strlen(base);
 	ft_putnbr_base_recursive(nbr, base, form);
 }
