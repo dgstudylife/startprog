@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 02:58:52 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/15 15:06:58 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/15 17:34:43 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_putnbr(int size)
 	write(1, &c, 1);
 }
 
-void	ft_sow_tab(struct s_stock_str *par)
+void	ft_show_tab(struct s_stock_str *par)
 {
 	int index;
 
