@@ -6,20 +6,20 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:52:27 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/16 20:37:35 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/16 20:44:29 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_strcpy(char *dest, char *src, char *until)
+void			ft_strcpy(char *dest, char *src, char *until)
 {
 	while (src < until)
 		*(dest++) = *(src++);
 	*dest = 0;
 }
 
-int	meet_charset(char c, char *charset)
+int				meet_charset(char c, char *charset)
 {
 	int index;
 
@@ -51,11 +51,11 @@ unsigned int	how_many_str(char *str, char *charset)
 	return (count);
 }
 
-char	**ft_split(char *str, char *charset)
+char			**ft_split(char *str, char *charset)
 {
-	char		**array;
+	char			**array;
 	unsigned int	index;
-	char		*start_str;
+	char			*start_str;
 
 	array = (char **)malloc(sizeof(char *) * how_many_str(str, charset) + 1);
 	index = 0;

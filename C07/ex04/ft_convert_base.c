@@ -6,17 +6,17 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:47:57 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/16 17:48:31 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/16 20:46:27 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	is_base_valid(char *str);
-int	ft_is_whitespace(char c);
-int	ft_strlen(char *src);
+int		is_base_valid(char *str);
+int		ft_is_whitespace(char c);
+int		ft_strlen(char *src);
 
-int	atoi_base(char *str, char *base, int form)
+int		atoi_base(char *str, char *base, int form)
 {
 	int decimal;
 	int minus;
@@ -45,7 +45,7 @@ int	atoi_base(char *str, char *base, int form)
 	return (decimal);
 }
 
-int	resolve_base(char *base, char match)
+int		resolve_base(char *base, char match)
 {
 	int index;
 
@@ -59,7 +59,7 @@ int	resolve_base(char *base, char match)
 	return (-1);
 }
 
-int	compute_size(long long result, int form)
+int		compute_size(long long result, int form)
 {
 	int size;
 
@@ -80,7 +80,7 @@ char	*change_base(int decimal, char *base, int form)
 {
 	long long	tmp;
 	char		*string;
-	int		size;
+	int			size;
 
 	if (decimal == 0)
 	{
