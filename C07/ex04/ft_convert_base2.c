@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:56:12 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/16 03:35:09 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:32:02 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	is_base_valid(char *str)
 		return (0);
 	while (*temp)
 	{
-		if (is_whitespace(*temp) || *temp == '+' || *temp == '-')
+		if (ft_is_whitespace(*temp) || *temp == '+' || *temp == '-')
 			return (0);
 		temp++;
 	}
@@ -52,9 +52,4 @@ int	is_base_valid(char *str)
 		i++;
 	}
 	return (1);
-}
-
-int	compute_number_length()
-{
-	
 }

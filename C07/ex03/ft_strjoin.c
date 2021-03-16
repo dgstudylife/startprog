@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 18:30:32 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/15 04:36:24 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/16 18:49:59 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ long long	ft_strlen(char *str)
 char		*ft_strcpy(char *dest, char *src)
 {
 	while (*src)
-		*dest = *src++;
+		*dest++ = *src++;
 	return (dest);
 }
 
@@ -40,7 +40,7 @@ char		*ft_strjoin(int size, char **strs, char *sep)
 	{
 		array = ((char *)malloc(1));
 		array[0] = 0;
-		return (ret);
+		return (array);
 	}
 	strs_len = 0;
 	index = 0;
