@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 02:50:43 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/17 03:02:13 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/17 09:45:51 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_any(char **tab, int (*f)(char*))
 		}
 			return (1);
 		i++;
-
+	dkf
 	}
 	return (0);
 }
