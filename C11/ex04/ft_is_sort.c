@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 02:43:01 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/17 14:36:29 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/17 13:51:19 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/17 19:04:29 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	*ft_map(int *tab, int length, int (*f)(int))
+int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	int	*array;
-	int	index;
+	int i;
+	int up;
+	int down;
 
-	if (!(array = (int *)malloc(sizeof(int) * length)))
-		return (0);
-	index = 0;
-	if (length <= 0)
-		return (0);
-	while (index < length)
+	i = 0;
+	up = 0;
+	down = 0;
+	while (i < length - 1)
 	{
-		array[index] = f(tab[index]);
-		index++;
+		if (f(tab[i], tab[i + 1]) > 0)
+			down = 1;
+		else if (f(tab[i], tab[i + 1]) < 0)
+			up = 1;
+		i++;
 	}
-	return (array);
+	if (up == 1 && down == 1)
+		return (0);
+	else
+		return (1);
 }

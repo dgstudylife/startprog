@@ -6,7 +6,7 @@
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 02:50:43 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/17 09:45:51 by donggele         ###   ########.fr       */
+/*   Updated: 2021/03/17 12:57:44 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,9 @@ int	ft_any(char **tab, int (*f)(char*))
 	i = 0;
 	while (tab[i])
 	{
-		if ((*f)(tab[i]) != 0)
-		{
-			
-		}
+		if (f(tab[i]) != 0)
 			return (1);
 		i++;
-	dkf
 	}
 	return (0);
 }

@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ex05.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donggele <donggele@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 02:43:01 by donggele          #+#    #+#             */
-/*   Updated: 2021/03/17 14:36:29 by donggele         ###   ########.fr       */
+/*   Created: 2021/03/17 16:51:11 by donggele          #+#    #+#             */
+/*   Updated: 2021/03/17 19:23:22 by donggele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef EX05_H
+# define EX05_H
 
-int	*ft_map(int *tab, int length, int (*f)(int))
-{
-	int	*array;
-	int	index;
-
-	if (!(array = (int *)malloc(sizeof(int) * length)))
-		return (0);
-	index = 0;
-	if (length <= 0)
-		return (0);
-	while (index < length)
-	{
-		array[index] = f(tab[index]);
-		index++;
-	}
-	return (array);
-}
+int		sum(int a, int b);
+int		sub(int a, int b);
+int		mul(int a, int b);
+int		div(int a, int b);
+int		mod(int a, int b);
+void	ft_putstr(char *c);
+int		atoi_decimal(char *str);
+void	ft_putnbr(int number);
+#endif
